@@ -1,51 +1,18 @@
-Example Elma Project
-===
+# SuperCar-EE590
+Using Event Loop Manager called elma to improve and extend functionalities  car. These following functions will be implemented: Gear, Break, Engine, Steering wheel and driver simulator
+# Milestones
+##### Week of March 11
+* Implement and integrate Gear function
+* Implement and integrate Break function
+* Implement and integrate Engine function (apply State machine)
+##### Week of March 18 
+* Implement and integrate Steering wheel 
+* Implement and integrate driver simulator 
+* Use Doxygen to document 
 
-[Elma](http://klavinslab.org/elma) is an event loop manager designed to teach embedded and reactive systems programming. This repository contains an example Elma project, showing how to use many Elma features, as well as illustrating how to arrange the files and directories in an Elma project.
-
-The source code for this project is available [on github](https://github.com/klavinslab/elma_project).
-
-Installation
----
-
-    git clone https://github.com/klavinslab/elma_project.git
-    cd elma_project
-    docker run -v $PWD:/source -it klavins/elma:latest bash
-    make
-    make docs
+##### Deadline March 21
+* Submit project 
 
 
-Execution
----
-To run the stopwatch, type
 
-    bin/stopwatch
 
-The stopwatch is controlled via the keyboard, via these keys:
-- **s**: Start or stop
-- **l**: Lap
-- **r**: Reset
-- **q**: Quit
-
-Testing
----
-To run tests, do
-```bash
-bin/test
-```
-
-Architecture
----
-Describe how your project was designed, what choices you made, how things are organized, etc.
-
-Results
----
-Describe the results of testing and running your code. Include visuals when possible.
-
-Acknowledgements
----
-Mention anyone who helped you and how.
-
-References
----
-List all libraries, articles, stack overflow answers, etc. that you used to get your code working.
