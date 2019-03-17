@@ -5,8 +5,8 @@ Using Event Loop Manager called elma to improve and extend functionalities  car.
 * Implement and integrate Gear function
 * Implement and integrate Break function
 * Implement and integrate Engine function (apply State machine)
-*status
-*Developed Gear function with mode:N,P,D,R
+* Current status
+* Developed Gear function with mode:N,P,D,R
 * *N= Neutral Mode
 * *P= Park Mode
 * *D= Drive Mode
