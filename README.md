@@ -17,6 +17,13 @@ Using Event Loop Manager called elma to improve and extend functionalities  car.
 
 # Current Status 
 
+##### Successfully Developed Gear function
+* N = Neutral Mode
+* P = Park Mode
+* D = Drive Mode
+* R = Reverse Mode
+
+
 
 
 
