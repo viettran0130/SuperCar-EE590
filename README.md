@@ -45,18 +45,16 @@ Test Example:
 
         void update() {
             int random = rand() % 10;
-             if (random % 2==0){
+            if (random % 2==0){
                 std::cout << "Engine on" << " \n";
                 emit(Event("turn on engine"));
-              }else {
-            std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
-            emit(Event("turn off engine"));
-            
+             }else {
+             std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
+             emit(Event("turn off engine"));
             }
-        v["gear_value"] = "D";
-        emit(Event("set gear",v)); 
-
-       }
+            v["gear_value"] = "D";
+            emit(Event("set gear",v)); 
+        }
  ```
     
 
