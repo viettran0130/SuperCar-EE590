@@ -37,15 +37,15 @@ Using Event Loop Manager called elma to improve and extend functionalities  car.
 * Test Reverse Mode (PASSED)
 
 Test Example: 
-* * Engine off -> elocity = 0 
+  * Engine off -> elocity = 0 
 
-* *  Engine on and Gear set D -> Drive mode -> Speed increasing 
-Engine on 
-Drive Mode 
-Time=10007.6  ,  velocity=0.100005 
-Engine on 
-Drive Mode 
-Time=10107.6  ,  velocity=0.200011 
+  *  Engine on and Gear set D -> Drive mode -> Speed increasing 
+    Engine on 
+    Drive Mode 
+    Time=10007.6  ,  velocity=0.100005 
+    Engine on 
+    Drive Mode 
+    Time=10107.6  ,  velocity=0.200011 
 
 
 
