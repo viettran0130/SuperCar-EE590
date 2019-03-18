@@ -1,7 +1,12 @@
 # SuperCar-EE590
 Using Event Loop Manager called elma to improve and extend functionalities  car. These following functions will be implemented: Gear, Break, Engine, Steering wheel and driver simulator
 # Run the project 
- git clone https://github.com/viettran0130/SuperCar-EE590.git
+    git clone https://github.com/viettran0130/SuperCar-EE590.git
+    cd SuperCar-EE590
+    docker run -v $PWD:/source -it klavins/elma:latest bash
+    make
+    examples# bin/driving 
+    
 
 # Milestones
 
