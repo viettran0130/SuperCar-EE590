@@ -1,14 +1,5 @@
 # SuperCar-EE590
-This is final project for EE590: Advanced Programming for Embedded Systems.
-Using Event Loop Manager called elma to improve and extend functionalities  car.
-These following functions will be implemented: 
-* Gear will contain 4 modes:
-    **N = Neutral Mode
-    P = Park Mode
-    D = Drive Mode
-    R = Reverse Mode
- * Break
- * driver simulator
+Using Event Loop Manager called elma to improve and extend functionalities  car. These following functions will be implemented: Gear, Break, Engine, Steering wheel and driver simulator
 # Run the project 
     git clone https://github.com/viettran0130/SuperCar-EE590.git
     cd SuperCar-EE590
@@ -49,6 +40,22 @@ Test Example:
   * Engine off -> velocity = 0 
   * Engine on and Gear set D -> Drive mode -> Speed increasing 
   * Engine on and Gear set P -> Park mode -> velocity = 0 
+  
+      void update() {
+        int random = rand() % 10;
+        if (random % 2==0){
+            std::cout << "Engine on" << " \n";
+            emit(Event("turn on engine"));
+        }else {
+            std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
+            emit(Event("turn off engine"));
+            
+        }
+        v["gear_value"] = "D";
+         emit(Event("set gear",v)); 
+
+        
+    }
  
     
 
