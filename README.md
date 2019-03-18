@@ -35,7 +35,7 @@ These following functions will be implemented:
 
 ##### Successfully Developed Gear function
 
-  ```c++
+ ```c++
  void update() {
         force=1000
         if (can_run==false){
@@ -66,7 +66,7 @@ These following functions will be implemented:
         std::cout << "Time=" <<  milli_time() << "  ,  "
                  << "velocity="<<  velocity << " \n";   
     }
-     ```
+ ```
 ##### Successfully Developed Driver Class to test Gear function 
 * Test Neutral Mode (PASSED)
 * Test Park Mode (PASSED)
