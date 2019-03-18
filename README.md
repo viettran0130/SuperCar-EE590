@@ -41,7 +41,7 @@ Test Example:
   * Engine on and Gear set D -> Drive mode -> Speed increasing 
   * Engine on and Gear set P -> Park mode -> velocity = 0 
   
-  
+  ```c++
 
         void update() {
             int random = rand() % 10;
@@ -57,7 +57,7 @@ Test Example:
         emit(Event("set gear",v)); 
 
        }
- 
+ ```
     
 
 
