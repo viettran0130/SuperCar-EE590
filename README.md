@@ -41,21 +41,22 @@ Test Example:
   * Engine on and Gear set D -> Drive mode -> Speed increasing 
   * Engine on and Gear set P -> Park mode -> velocity = 0 
   
-      void update() {
-        int random = rand() % 10;
-        if (random % 2==0){
-            std::cout << "Engine on" << " \n";
-            emit(Event("turn on engine"));
-        }else {
+  
+
+        void update() {
+            int random = rand() % 10;
+             if (random % 2==0){
+                std::cout << "Engine on" << " \n";
+                emit(Event("turn on engine"));
+              }else {
             std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
             emit(Event("turn off engine"));
             
-        }
+            }
         v["gear_value"] = "D";
-         emit(Event("set gear",v)); 
+        emit(Event("set gear",v)); 
 
-        
-    }
+       }
  
     
 
