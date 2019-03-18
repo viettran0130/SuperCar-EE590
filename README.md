@@ -19,7 +19,7 @@ These following functions will be implemented:
 # Milestones
 
 ##### Week of March 11
-* Implement and integrate Gear function
+* Implement and integrate Gear function 
 * Implement and integrate Break function
 * Implement and integrate Engine function (apply State machine)
 
@@ -34,11 +34,36 @@ These following functions will be implemented:
 # Current Status 
 
 ##### Successfully Developed Gear function
-* N = Neutral Mode
-* P = Park Mode
-* D = Drive Mode
-* R = Reverse Mode
+ void update() {
+        force=1000
+        if (can_run==false){
+            velocity = 0;
+            return ; 
+        }
+        if (gear == "N")  {
+            std::cout << "Engine on" << " \n";
+            std::cout << "Neutral Mode" << " \n";
+            velocity = 0;
+        }else if (gear == "P"){
+            std::cout << "Engine on" << " \n";
+            std::cout << "Park Mode" << " \n";
+            velocity = 0;
+        }else if( gear == "D") {
+            std::cout << "Engine on" << " \n";
+            std::cout << "Drive Mode" << " \n";
+            foward = true;
+            velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;   
+        } else if (gear == "R"){
+            std::cout << "Engine on" << " \n";
+            std::cout << "Reverse Mode" << " \n";
+            foward = false; 
+            velocity += -1*(( delta() / 1000 ) * ( - k * velocity + force ) / m);
 
+        }
+        channel("Velocity").send(velocity);
+        std::cout << "Time=" <<  milli_time() << "  ,  "
+                 << "velocity="<<  velocity << " \n";   
+    }
 ##### Successfully Developed Driver Class to test Gear function 
 * Test Neutral Mode (PASSED)
 * Test Park Mode (PASSED)
