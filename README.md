@@ -3,10 +3,10 @@ This is final project for EE590: Advanced Programming for Embedded Systems.
 Using Event Loop Manager called elma to improve and extend functionalities  car.
 These following functions will be implemented: 
 * Gear will contain 4 modes:
-    **N = Neutral Mode
-    P = Park Mode
-    D = Drive Mode
-    R = Reverse Mode
+    * N = Neutral Mode
+    * P = Park Mode
+    * D = Drive Mode
+    * R = Reverse Mode
  * Break
  * driver simulator
 # Run the project 
