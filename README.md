@@ -23,6 +23,18 @@ Using Event Loop Manager called elma to improve and extend functionalities  car.
 * D = Drive Mode
 * R = Reverse Mode
 
+##### Successfully Developed Driver Class to test Gear function 
+* Test Neutral Mode (PASSED)
+* Test Park Mode (PASSED)
+* Test Drive Mode (PASSED)
+* Test Reverse Mode (PASSED)
+
+
+
+
+
+
+
 
 
 
