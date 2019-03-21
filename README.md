@@ -106,7 +106,9 @@ void update() {
 ```
 # Break 
 * Car is running, break applies -> velocity gradually decreased.  
-* Velocity =0 -> Car stops 
+* Velocity =0 -> Car stops
+# docs files 
+* Look at this link for reference
 # Milestones
 ##### Week of March 11
 * Implement and integrate Gear function 
