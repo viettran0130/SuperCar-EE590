@@ -2,6 +2,7 @@
 This is final project for EE590: Advanced Programming for Embedded Systems.
 Using Event Loop Manager called elma to improve and extend functionalities  car.
 These following functions will be implemented: 
+* Engine: Finite State Machine was implemented to turn on and off the engine
 * Gear will contain 4 modes:
     * N = Neutral Mode
     * P = Park Mode
@@ -21,7 +22,8 @@ These following functions will be implemented:
 * Verify Finite State Machine applied on Engine 
    * random function will define if engine is on/off
 * Verify Gear function
-   * 
+   * Engine is off--> velocity = 0
+   * Engine is on, Gear sets "D"--> Car is runing , speed increased 
 
 ```c++
 void update() {
@@ -46,6 +48,28 @@ void update() {
          emit(Event("set gear",v));   
     }
  ```
+ 
+ # Engine – Finite State Machine
+ * From state off to on -> turn on engine 
+ * From state on to off -> turn off engine 
+```c++ 
+class Engine : public StateMachine {
+public:
+ 
+    Engine(std::string name): StateMachine(name), on("on"), off("off")
+     {
+        add_transition("turn on engine", off, on);
+        add_transition("turn off engine", on, off);
+        set_initial(off);
+    }
+
+private:
+    EngineState on;
+    EngineState off;
+    
+};
+
+```
 # Milestones
 
 ##### Week of March 11
