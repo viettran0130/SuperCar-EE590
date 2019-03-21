@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,163 +88,312 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">driving.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="driving_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;elma.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedriving__example.html">driving_example</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classdriving__example_1_1Car.html">Car</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html#ac009a69609a8943f8ba28482bc0ac3af">   21</a></span>&#160;        <a class="code" href="classdriving__example_1_1Car.html#ac009a69609a8943f8ba28482bc0ac3af">Car</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> std::vector;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classCar.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCar.html">Car</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classCar.html">Car</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">   13</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">init</a>() {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;       </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">// gear </span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        watch(<span class="stringliteral">&quot;set gear&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;           json v; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;           v = e.<a class="code" href="classelma_1_1Event.html#a06e4e5f55834e214aa0fb93911ab7508">value</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;           gear = v[<span class="stringliteral">&quot;gear_value&quot;</span>].get&lt;std::string&gt;();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          <span class="comment">//  std::cout &lt;&lt; &quot;set gear&quot; &lt;&lt; &quot; \n&quot;;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        });</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html#ab5928fa120c58d6eb5061e1e3e808880">   24</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Car.html#ab5928fa120c58d6eb5061e1e3e808880">init</a>() {}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html#a38a3ff004bca403f34c114de523484ed">   28</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Car.html#a38a3ff004bca403f34c114de523484ed">start</a>() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            velocity = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;       <span class="comment">// Engine </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        watch(<span class="stringliteral">&quot;engine on&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            can_run =<span class="keyword">true</span>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        });</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        watch(<span class="stringliteral">&quot;engine off&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            can_run =<span class="keyword">false</span>; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        });</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html#a28a87f7ae12047c49990cac8a2b925d8">   36</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Car.html#a28a87f7ae12047c49990cac8a2b925d8">update</a>() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Throttle&quot;</span>).nonempty() ) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                force = channel(<span class="stringliteral">&quot;Throttle&quot;</span>).latest();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            channel(<span class="stringliteral">&quot;Velocity&quot;</span>).send(velocity);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::cout &lt;&lt; milli_time() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    &lt;&lt; velocity &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Car.html#a9ede9e9f44b7cfd4a69d4451e7d87767">   47</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Car.html#a9ede9e9f44b7cfd4a69d4451e7d87767">stop</a>() {}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">double</span> velocity;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">double</span> force;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> k = 0.02;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> m = 1000;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };  </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html">   59</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classdriving__example_1_1CruiseControl.html">CruiseControl</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html#afcd3b7a3780b356f5e5de979ead40a09">   65</a></span>&#160;        <a class="code" href="classdriving__example_1_1CruiseControl.html#afcd3b7a3780b356f5e5de979ead40a09">CruiseControl</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html#a2ccc8e176a52717fc404f6dab07a936f">   68</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1CruiseControl.html#a2ccc8e176a52717fc404f6dab07a936f">init</a>() {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            watch(<span class="stringliteral">&quot;desired speed&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                desired_speed = e.<a class="code" href="classelma_1_1Event.html#a06e4e5f55834e214aa0fb93911ab7508">value</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            });</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html#a0e7b67d5b8d0cd8996315c88fb2683b4">   75</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1CruiseControl.html#a0e7b67d5b8d0cd8996315c88fb2683b4">start</a>() {}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html#a0b6f94cc907bc5a2a9c0134b1b98904c">   80</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1CruiseControl.html#a0b6f94cc907bc5a2a9c0134b1b98904c">update</a>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Velocity&quot;</span>).nonempty() ) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                speed = channel(<span class="stringliteral">&quot;Velocity&quot;</span>).latest();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            channel(<span class="stringliteral">&quot;Throttle&quot;</span>).send(-KP*(speed - desired_speed));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classdriving__example_1_1CruiseControl.html#a2832d55ed533282b111c2c3abfa84349">   88</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1CruiseControl.html#a2832d55ed533282b111c2c3abfa84349">stop</a>() {}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">double</span> speed = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">double</span> desired_speed = 0.0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> KP = 314.15;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    vector&lt;double&gt; _v;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html">   98</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classdriving__example_1_1Driver.html">Driver</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html#ae7b8d5878f63e5c4376ffa9eadb0c62e">  104</a></span>&#160;        <a class="code" href="classdriving__example_1_1Driver.html#ae7b8d5878f63e5c4376ffa9eadb0c62e">Driver</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html#a6725229ac461ec373961f13fcbfc7522">  107</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Driver.html#a6725229ac461ec373961f13fcbfc7522">init</a>() {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            desired_speed = 50;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html#ad8069e6a02df206e2e9b8cfababbf382">  112</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Driver.html#ad8069e6a02df206e2e9b8cfababbf382">start</a>() {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">start</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        velocity = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">update</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// if ( channel(&quot;Throttle&quot;).nonempty() ) {</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//     force = channel(&quot;Throttle&quot;).latest();</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">//    // force=1000;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// }</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        force=10000;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (can_run==<span class="keyword">false</span>){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            velocity = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            return ; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (gear == <span class="stringliteral">&quot;N&quot;</span>)  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine on&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Neutral Mode&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            velocity = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (gear == <span class="stringliteral">&quot;P&quot;</span>){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine on&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Park Mode&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            velocity = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>( gear == <span class="stringliteral">&quot;D&quot;</span>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine on&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Drive Mode&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            foward = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;   </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (gear == <span class="stringliteral">&quot;R&quot;</span>){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine on&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Reverse Mode&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            foward = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            velocity += -1*(( delta() / 1000 ) * ( - k * velocity + force ) / m);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        channel(<span class="stringliteral">&quot;Velocity&quot;</span>).send(velocity);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Time=&quot;</span> &lt;&lt;  milli_time() &lt;&lt; <span class="stringliteral">&quot;  ,  &quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;velocity=&quot;</span>&lt;&lt;  velocity &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;     </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">stop</a>() {}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span> velocity;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">double</span> force;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> k = 0.02;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> m = 1000;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Gear function//</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">string</span> gear = <span class="stringliteral">&quot;P&quot;</span>; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> foward = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Engine </span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> can_run = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};  </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classCruiseControl.html">   89</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCruiseControl.html">CruiseControl</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classCruiseControl.html">CruiseControl</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">   92</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">init</a>() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        watch(<span class="stringliteral">&quot;desired speed&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            desired_speed = e.<a class="code" href="classelma_1_1Event.html#a06e4e5f55834e214aa0fb93911ab7508">value</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        });</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">   97</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">start</a>() {}</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">   98</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">update</a>() {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Velocity&quot;</span>).nonempty() ) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            speed = channel(<span class="stringliteral">&quot;Velocity&quot;</span>).latest();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        channel(<span class="stringliteral">&quot;Throttle&quot;</span>).send(-KP*(speed - desired_speed));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">  104</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">stop</a>() {}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">double</span> speed = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> desired_speed = 0.0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> KP = 314.15;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                 vector&lt;double&gt; _v;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// Test Driver function </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classDriver.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDriver.html">Driver</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html#acdd60a3f2a57223cd91af3464f515351">  116</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Driver.html#acdd60a3f2a57223cd91af3464f515351">update</a>() {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> ( desired_speed == 50 ) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                desired_speed = 60;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                desired_speed = 50;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;desired speed&quot;</span>, desired_speed));</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classdriving__example_1_1Driver.html#a78b5b489d136113960bd6abbfd6e4fb6">  126</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classdriving__example_1_1Driver.html#a78b5b489d136113960bd6abbfd6e4fb6">stop</a>() {}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">double</span> desired_speed;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classDriver.html">Driver</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classDriver.html#a4c9a69e6620d74074275517d79e7db27">  116</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDriver.html#a4c9a69e6620d74074275517d79e7db27">init</a>() {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        desired_speed = 50;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classDriver.html#aa99ad9f72f49515679480a27775a042c">  119</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDriver.html#aa99ad9f72f49515679480a27775a042c">start</a>() {}</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classDriver.html#a081f2232dc793f51f57eda183f52001b">  120</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDriver.html#a081f2232dc793f51f57eda183f52001b">update</a>() {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">int</span> random = rand() % 10;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (random % 2==0){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine on&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;turn on engine&quot;</span>));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }<span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Engine off&quot;</span> &lt;&lt;<span class="stringliteral">&quot;    &quot;</span>&lt;&lt; <span class="stringliteral">&quot;velocity = 0&quot;</span> &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;turn off engine&quot;</span>));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    };</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keywordtype">int</span> main() {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classdriving__example_1_1Car.html">driving_example::Car</a> car(<span class="stringliteral">&quot;Car&quot;</span>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="classdriving__example_1_1CruiseControl.html">driving_example::CruiseControl</a> cc(<span class="stringliteral">&quot;Control&quot;</span>);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="classdriving__example_1_1Driver.html">driving_example::Driver</a> driver(<span class="stringliteral">&quot;Steve&quot;</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classelma_1_1Channel.html">Channel</a> throttle(<span class="stringliteral">&quot;Throttle&quot;</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="classelma_1_1Channel.html">Channel</a> velocity(<span class="stringliteral">&quot;Velocity&quot;</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(car, 100_ms)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(cc, 100_ms)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(driver, 5_s)</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#aa75af3cacc2e77ba4781b09353b8c2ad">add_channel</a>(throttle)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#aa75af3cacc2e77ba4781b09353b8c2ad">add_channel</a>(velocity)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#a94d24f5325ef19bf81e61d85e6b54750">run</a>(40_s);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html_a2ccc8e176a52717fc404f6dab07a936f"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html#a2ccc8e176a52717fc404f6dab07a936f">driving_example::CruiseControl::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Watch for events that change the desired speed. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00068">driving.cc:68</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html_ab5928fa120c58d6eb5061e1e3e808880"><div class="ttname"><a href="classdriving__example_1_1Car.html#ab5928fa120c58d6eb5061e1e3e808880">driving_example::Car::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Nothing to do to initialize. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00024">driving.cc:24</a></div></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        json v;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// v[&quot;gear_value&quot;] = &quot;R&quot;;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">//  emit(Event(&quot;set gear&quot;,v));</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">// v[&quot;gear_value&quot;] = &quot;P&quot;;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">//  emit(Event(&quot;set gear&quot;,v));</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// v[&quot;gear_value&quot;] = &quot;N&quot;;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">//  emit(Event(&quot;set gear&quot;,v));</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        v[<span class="stringliteral">&quot;gear_value&quot;</span>] = <span class="stringliteral">&quot;D&quot;</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;         emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;set gear&quot;</span>,v)); </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classDriver.html#a7084b55d54b1b1d46974171948f89915">  143</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDriver.html#a7084b55d54b1b1d46974171948f89915">stop</a>() {}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">double</span> desired_speed;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// Apply FSM to Engines to switch on/off state</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classEngineState.html">  152</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEngineState.html">EngineState</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1State.html">State</a> {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classEngineState.html">EngineState</a>(): <a class="code" href="classelma_1_1State.html">State</a>() {}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="classEngineState.html">EngineState</a>(std::string name): <a class="code" href="classelma_1_1State.html">State</a>(name) {}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classEngineState.html#a834b8afa90f6ab3606d44911c80c22b3">  158</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classEngineState.html#a834b8afa90f6ab3606d44911c80c22b3">entry</a>(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> (name()==<span class="stringliteral">&quot;on&quot;</span>) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;engine on&quot;</span>));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        } <span class="keywordflow">else</span> emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;engine off&quot;</span>));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classEngineState.html#a9a7c58bc387fe4f94b583d29b636d9e0">  163</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classEngineState.html#a9a7c58bc387fe4f94b583d29b636d9e0">during</a>() {} </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classEngineState.html#a6eef234dba7c94b8b9af1d07e020f74a">  164</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classEngineState.html#a6eef234dba7c94b8b9af1d07e020f74a">exit</a>(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classEngine.html">  167</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEngine.html">Engine</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1StateMachine.html">StateMachine</a> {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classEngine.html">Engine</a>(std::string name): <a class="code" href="classelma_1_1StateMachine.html">StateMachine</a>(name), on(<span class="stringliteral">&quot;on&quot;</span>), off(<span class="stringliteral">&quot;off&quot;</span>)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;     {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        add_transition(<span class="stringliteral">&quot;turn on engine&quot;</span>, off, on);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        add_transition(<span class="stringliteral">&quot;turn off engine&quot;</span>, on, off);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        set_initial(off);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="classEngineState.html">EngineState</a> on;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classEngineState.html">EngineState</a> off;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">// Break Process: if break applied , current speed will be decrease.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">// if current speed equals 0, car will stop </span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classBreak.html">  190</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBreak.html">Break</a>: <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="classBreak.html">Break</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classBreak.html#a34d70a3455cabbeba8eee7e4392685e4">  195</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBreak.html#a34d70a3455cabbeba8eee7e4392685e4">init</a>() {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            watch(<span class="stringliteral">&quot;break&quot;</span>, [<span class="keyword">this</span>](<a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                running = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            });  </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classBreak.html#ad5c314c7569d4567bf9d88a6164c0264">  201</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBreak.html#ad5c314c7569d4567bf9d88a6164c0264">start</a>() {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  </div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classBreak.html#aa559416fc0afcb4296411a02e4dafcca">  206</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBreak.html#aa559416fc0afcb4296411a02e4dafcca">update</a>() {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Throttle&quot;</span>).nonempty() ) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                force = channel(<span class="stringliteral">&quot;Throttle&quot;</span>).latest();</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            current_speed+= ( delta() / 1000 ) * ( - k * current_speed+ force ) / m;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">if</span> (_break== <span class="keyword">true</span> ){</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                current_speed-= ( delta() / 1000 ) * ( - k * current_speed+ force ) / m;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordflow">if</span> (current_speed==0){</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    running = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;       </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            channel(<span class="stringliteral">&quot;Velocity&quot;</span>).send(current_speed);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            std::cout &lt;&lt; milli_time() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    &lt;&lt; current_speed&lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="classBreak.html#aa2bf40b960dea7873a75dadb9f463e52">  224</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBreak.html#aa2bf40b960dea7873a75dadb9f463e52">stop</a>() {}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordtype">double</span> current_speed;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">bool</span> _break;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">bool</span> running;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">double</span> force;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;       </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> k = 0.02;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> m = 1000;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;};</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keywordtype">int</span> main() {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;     <a class="code" href="classCar.html">Car</a> car(<span class="stringliteral">&quot;Car&quot;</span>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;     <a class="code" href="classCruiseControl.html">CruiseControl</a> cc(<span class="stringliteral">&quot;Control&quot;</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;     <a class="code" href="classBreak.html">Break</a> br(<span class="stringliteral">&quot;Break&quot;</span>);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;     <a class="code" href="classDriver.html">Driver</a> driver(<span class="stringliteral">&quot;Steve&quot;</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;     <a class="code" href="classelma_1_1Channel.html">Channel</a> throttle(<span class="stringliteral">&quot;Throttle&quot;</span>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;     <a class="code" href="classelma_1_1Channel.html">Channel</a> velocity(<span class="stringliteral">&quot;Velocity&quot;</span>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;     <a class="code" href="classEngine.html">Engine</a> engine(<span class="stringliteral">&quot;Engine&quot;</span>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(car, 100_ms)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;   </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(driver, 5_s)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(engine, 5_s)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;     .<a class="code" href="classelma_1_1Manager.html#aa75af3cacc2e77ba4781b09353b8c2ad">add_channel</a>(throttle)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;     .<a class="code" href="classelma_1_1Manager.html#aa75af3cacc2e77ba4781b09353b8c2ad">add_channel</a>(velocity)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    .<a class="code" href="classelma_1_1Manager.html#a94d24f5325ef19bf81e61d85e6b54750">run</a>(40_s)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    ;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="ttc" id="classCruiseControl_html_a7f4be54015f0607cb95a09b8ed45055e"><div class="ttname"><a href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">CruiseControl::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00097">driving.cc:97</a></div></div>
 <div class="ttc" id="classelma_1_1Manager_html"><div class="ttname"><a href="classelma_1_1Manager.html">elma::Manager</a></div><div class="ttdoc">The Process Manager class. </div><div class="ttdef"><b>Definition:</b> <a href="manager_8h_source.html#l00026">manager.h:26</a></div></div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html_a2832d55ed533282b111c2c3abfa84349"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html#a2832d55ed533282b111c2c3abfa84349">driving_example::CruiseControl::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Nothing to do to stop. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00088">driving.cc:88</a></div></div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html_a0e7b67d5b8d0cd8996315c88fb2683b4"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html#a0e7b67d5b8d0cd8996315c88fb2683b4">driving_example::CruiseControl::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Nothing to do to initialize. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00075">driving.cc:75</a></div></div>
+<div class="ttc" id="classDriver_html_a081f2232dc793f51f57eda183f52001b"><div class="ttname"><a href="classDriver.html#a081f2232dc793f51f57eda183f52001b">Driver::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00120">driving.cc:120</a></div></div>
 <div class="ttc" id="classelma_1_1Manager_html_aff7ec0e7409420c8d92a59443066738c"><div class="ttname"><a href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">elma::Manager::schedule</a></div><div class="ttdeci">Manager &amp; schedule(Process &amp;process, high_resolution_clock::duration period)</div><div class="ttdef"><b>Definition:</b> <a href="manager_8cc_source.html#l00012">manager.cc:12</a></div></div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html_a0b6f94cc907bc5a2a9c0134b1b98904c"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html#a0b6f94cc907bc5a2a9c0134b1b98904c">driving_example::CruiseControl::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00080">driving.cc:80</a></div></div>
 <div class="ttc" id="classelma_1_1Event_html_a06e4e5f55834e214aa0fb93911ab7508"><div class="ttname"><a href="classelma_1_1Event.html#a06e4e5f55834e214aa0fb93911ab7508">elma::Event::value</a></div><div class="ttdeci">json value() const </div><div class="ttdef"><b>Definition:</b> <a href="event_8h_source.html#l00034">event.h:34</a></div></div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html">driving_example::CruiseControl</a></div><div class="ttdoc">Example: A cruise controller for a Car process. See examples/driving.cc. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00059">driving.cc:59</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html_ac009a69609a8943f8ba28482bc0ac3af"><div class="ttname"><a href="classdriving__example_1_1Car.html#ac009a69609a8943f8ba28482bc0ac3af">driving_example::Car::Car</a></div><div class="ttdeci">Car(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00021">driving.cc:21</a></div></div>
-<div class="ttc" id="classdriving__example_1_1CruiseControl_html_afcd3b7a3780b356f5e5de979ead40a09"><div class="ttname"><a href="classdriving__example_1_1CruiseControl.html#afcd3b7a3780b356f5e5de979ead40a09">driving_example::CruiseControl::CruiseControl</a></div><div class="ttdeci">CruiseControl(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00065">driving.cc:65</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html_ae7b8d5878f63e5c4376ffa9eadb0c62e"><div class="ttname"><a href="classdriving__example_1_1Driver.html#ae7b8d5878f63e5c4376ffa9eadb0c62e">driving_example::Driver::Driver</a></div><div class="ttdeci">Driver(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00104">driving.cc:104</a></div></div>
+<div class="ttc" id="classDriver_html_aa99ad9f72f49515679480a27775a042c"><div class="ttname"><a href="classDriver.html#aa99ad9f72f49515679480a27775a042c">Driver::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00119">driving.cc:119</a></div></div>
+<div class="ttc" id="classCruiseControl_html"><div class="ttname"><a href="classCruiseControl.html">CruiseControl</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00089">driving.cc:89</a></div></div>
+<div class="ttc" id="classBreak_html_a34d70a3455cabbeba8eee7e4392685e4"><div class="ttname"><a href="classBreak.html#a34d70a3455cabbeba8eee7e4392685e4">Break::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00195">driving.cc:195</a></div></div>
+<div class="ttc" id="classEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00167">driving.cc:167</a></div></div>
+<div class="ttc" id="classCar_html_a8c3bd55ec32a9d2dd71e10283b80db9a"><div class="ttname"><a href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">Car::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00036">driving.cc:36</a></div></div>
+<div class="ttc" id="classCruiseControl_html_a41a1e64d0f3c658019e1364b969b52e4"><div class="ttname"><a href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">CruiseControl::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00104">driving.cc:104</a></div></div>
+<div class="ttc" id="classEngineState_html"><div class="ttname"><a href="classEngineState.html">EngineState</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00152">driving.cc:152</a></div></div>
+<div class="ttc" id="classEngineState_html_a9a7c58bc387fe4f94b583d29b636d9e0"><div class="ttname"><a href="classEngineState.html#a9a7c58bc387fe4f94b583d29b636d9e0">EngineState::during</a></div><div class="ttdeci">void during()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00163">driving.cc:163</a></div></div>
+<div class="ttc" id="classCar_html"><div class="ttname"><a href="classCar.html">Car</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00010">driving.cc:10</a></div></div>
 <div class="ttc" id="classelma_1_1Manager_html_a94d24f5325ef19bf81e61d85e6b54750"><div class="ttname"><a href="classelma_1_1Manager.html#a94d24f5325ef19bf81e61d85e6b54750">elma::Manager::run</a></div><div class="ttdeci">Manager &amp; run(high_resolution_clock::duration runtime)</div><div class="ttdef"><b>Definition:</b> <a href="manager_8cc_source.html#l00175">manager.cc:175</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html_a6725229ac461ec373961f13fcbfc7522"><div class="ttname"><a href="classdriving__example_1_1Driver.html#a6725229ac461ec373961f13fcbfc7522">driving_example::Driver::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">initialize the desired speed </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00107">driving.cc:107</a></div></div>
+<div class="ttc" id="classBreak_html_aa559416fc0afcb4296411a02e4dafcca"><div class="ttname"><a href="classBreak.html#aa559416fc0afcb4296411a02e4dafcca">Break::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00206">driving.cc:206</a></div></div>
 <div class="ttc" id="classelma_1_1Event_html"><div class="ttname"><a href="classelma_1_1Event.html">elma::Event</a></div><div class="ttdoc">Events that can be emitted, watched, and responded to with event handlers. </div><div class="ttdef"><b>Definition:</b> <a href="event_8h_source.html#l00023">event.h:23</a></div></div>
 <div class="ttc" id="classelma_1_1Manager_html_aa75af3cacc2e77ba4781b09353b8c2ad"><div class="ttname"><a href="classelma_1_1Manager.html#aa75af3cacc2e77ba4781b09353b8c2ad">elma::Manager::add_channel</a></div><div class="ttdeci">Manager &amp; add_channel(Channel &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="manager_8cc_source.html#l00031">manager.cc:31</a></div></div>
 <div class="ttc" id="namespacestd_1_1chrono_html"><div class="ttname"><a href="namespacestd_1_1chrono.html">chrono</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html_a78b5b489d136113960bd6abbfd6e4fb6"><div class="ttname"><a href="classdriving__example_1_1Driver.html#a78b5b489d136113960bd6abbfd6e4fb6">driving_example::Driver::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Nothing to do to stop. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00126">driving.cc:126</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html"><div class="ttname"><a href="classdriving__example_1_1Car.html">driving_example::Car</a></div><div class="ttdoc">Example: Another car simulation process. See examples/driving.cc. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00016">driving.cc:16</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html_a9ede9e9f44b7cfd4a69d4451e7d87767"><div class="ttname"><a href="classdriving__example_1_1Car.html#a9ede9e9f44b7cfd4a69d4451e7d87767">driving_example::Car::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Nothing to do to stop. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00047">driving.cc:47</a></div></div>
+<div class="ttc" id="classCar_html_ace6af67a1ee7108794a9d1470b5f0b7a"><div class="ttname"><a href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">Car::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00073">driving.cc:73</a></div></div>
+<div class="ttc" id="classelma_1_1State_html"><div class="ttname"><a href="classelma_1_1State.html">elma::State</a></div><div class="ttdoc">States for the StateMachine class. </div><div class="ttdef"><b>Definition:</b> <a href="state_8h_source.html#l00014">state.h:14</a></div></div>
+<div class="ttc" id="classCruiseControl_html_abbed1ba1348a438620359719d3ea05bd"><div class="ttname"><a href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">CruiseControl::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00092">driving.cc:92</a></div></div>
+<div class="ttc" id="classDriver_html_a7084b55d54b1b1d46974171948f89915"><div class="ttname"><a href="classDriver.html#a7084b55d54b1b1d46974171948f89915">Driver::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00143">driving.cc:143</a></div></div>
+<div class="ttc" id="classDriver_html_a4c9a69e6620d74074275517d79e7db27"><div class="ttname"><a href="classDriver.html#a4c9a69e6620d74074275517d79e7db27">Driver::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00116">driving.cc:116</a></div></div>
+<div class="ttc" id="classCruiseControl_html_a74d000560ca73a50fcd959c01faecf78"><div class="ttname"><a href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">CruiseControl::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00098">driving.cc:98</a></div></div>
+<div class="ttc" id="classBreak_html_aa2bf40b960dea7873a75dadb9f463e52"><div class="ttname"><a href="classBreak.html#aa2bf40b960dea7873a75dadb9f463e52">Break::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00224">driving.cc:224</a></div></div>
+<div class="ttc" id="classDriver_html"><div class="ttname"><a href="classDriver.html">Driver</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00112">driving.cc:112</a></div></div>
 <div class="ttc" id="classelma_1_1Manager_html_a457cd75094c043632a1443758f041090"><div class="ttname"><a href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">elma::Manager::init</a></div><div class="ttdeci">Manager &amp; init()</div><div class="ttdef"><b>Definition:</b> <a href="manager_8cc_source.html#l00097">manager.cc:97</a></div></div>
-<div class="ttc" id="namespacedriving__example_html"><div class="ttname"><a href="namespacedriving__example.html">driving_example</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00011">driving.cc:11</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html"><div class="ttname"><a href="classdriving__example_1_1Driver.html">driving_example::Driver</a></div><div class="ttdoc">Example: A simulated driver, who keeps cycling between 50 and 60 kph. See examples/driving.cc. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00098">driving.cc:98</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html_a38a3ff004bca403f34c114de523484ed"><div class="ttname"><a href="classdriving__example_1_1Car.html#a38a3ff004bca403f34c114de523484ed">driving_example::Car::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00028">driving.cc:28</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Car_html_a28a87f7ae12047c49990cac8a2b925d8"><div class="ttname"><a href="classdriving__example_1_1Car.html#a28a87f7ae12047c49990cac8a2b925d8">driving_example::Car::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00036">driving.cc:36</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html_acdd60a3f2a57223cd91af3464f515351"><div class="ttname"><a href="classdriving__example_1_1Driver.html#acdd60a3f2a57223cd91af3464f515351">driving_example::Driver::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00116">driving.cc:116</a></div></div>
+<div class="ttc" id="classCar_html_a3ea27fcc1913f1a055e09a652dba68d7"><div class="ttname"><a href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">Car::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00013">driving.cc:13</a></div></div>
+<div class="ttc" id="classEngineState_html_a834b8afa90f6ab3606d44911c80c22b3"><div class="ttname"><a href="classEngineState.html#a834b8afa90f6ab3606d44911c80c22b3">EngineState::entry</a></div><div class="ttdeci">void entry(const Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00158">driving.cc:158</a></div></div>
+<div class="ttc" id="classEngineState_html_a6eef234dba7c94b8b9af1d07e020f74a"><div class="ttname"><a href="classEngineState.html#a6eef234dba7c94b8b9af1d07e020f74a">EngineState::exit</a></div><div class="ttdeci">void exit(const Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00164">driving.cc:164</a></div></div>
 <div class="ttc" id="classelma_1_1Channel_html"><div class="ttname"><a href="classelma_1_1Channel.html">elma::Channel</a></div><div class="ttdoc">A channel for sending double values to and from Process objects. </div><div class="ttdef"><b>Definition:</b> <a href="channel_8h_source.html#l00021">channel.h:21</a></div></div>
-<div class="ttc" id="classdriving__example_1_1Driver_html_ad8069e6a02df206e2e9b8cfababbf382"><div class="ttname"><a href="classdriving__example_1_1Driver.html#ad8069e6a02df206e2e9b8cfababbf382">driving_example::Driver::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Nothing to do to start. </div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00112">driving.cc:112</a></div></div>
+<div class="ttc" id="classBreak_html_ad5c314c7569d4567bf9d88a6164c0264"><div class="ttname"><a href="classBreak.html#ad5c314c7569d4567bf9d88a6164c0264">Break::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00201">driving.cc:201</a></div></div>
+<div class="ttc" id="classelma_1_1StateMachine_html"><div class="ttname"><a href="classelma_1_1StateMachine.html">elma::StateMachine</a></div><div class="ttdoc">A finite state machine class. </div><div class="ttdef"><b>Definition:</b> <a href="state__machine_8h_source.html#l00013">state_machine.h:13</a></div></div>
+<div class="ttc" id="classCar_html_a6451c4efaec7812fccec8bdb2a71bb9f"><div class="ttname"><a href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">Car::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00033">driving.cc:33</a></div></div>
 <div class="ttc" id="namespaceelma_html"><div class="ttname"><a href="namespaceelma.html">elma</a></div><div class="ttdef"><b>Definition:</b> <a href="channel_8cc_source.html#l00005">channel.cc:5</a></div></div>
+<div class="ttc" id="classBreak_html"><div class="ttname"><a href="classBreak.html">Break</a></div><div class="ttdef"><b>Definition:</b> <a href="driving_8cc_source.html#l00190">driving.cc:190</a></div></div>
 <div class="ttc" id="classelma_1_1Process_html"><div class="ttname"><a href="classelma_1_1Process.html">elma::Process</a></div><div class="ttdoc">An abstract base class for processes. </div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00024">process.h:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Fri Mar 15 2019 20:38:55 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Thu Mar 21 2019 19:19:44 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>

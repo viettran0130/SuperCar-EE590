@@ -65,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,77 +79,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Elma Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Elma is an event loop and process manager for embedded and reactive systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's <a href="https://github.com/klavins/ECEP520">ECE P 520 course</a> on advanced embedded systems programming. More information on how Elma was designed can be found in the links below:</p><ul>
-<li><a href="https://github.com/klavins/ECEP520/tree/master/week_6">Event loop management</a></li>
-<li><a href="https://github.com/klavins/ECEP520/tree/master/week_7">Events and finite state machines</a></li>
-<li><a href="https://github.com/klavins/ECEP520/blob/master/week_8">HTTP in event loops</a></li>
+<div class="textblock"><p>This is final project for EE590: Advanced Programming for Embedded Systems. Using Event Loop Manager called elma to improve and extend functionalities car. These following functions will be implemented:</p><ul>
+<li><a class="el" href="classEngine.html">Engine</a>: Finite State Machine was implemented to turn on and off the engine</li>
+<li>Gear will contain 4 modes:<ul>
+<li>N = Neutral Mode</li>
+<li>P = Park Mode</li>
+<li>D = Drive Mode</li>
+<li>R = Reverse Mode</li>
 </ul>
-<h1>Installation </h1>
-<p>The source code for Elma <a href="https://github.com/klavinslab/elma">is on Github</a>.</p>
-<h2>From Dockerhub </h2>
-<p>To get started, you will need a C++ build environment. We have provided one with the Docker container <code>elma</code>, which you can use as follows: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
-cd elma
-docker run -v $PWD:/source -it klavins/elma:latest bash
-make
-examples/bin/basic
-</pre><h2>From the Dockerfile </h2>
-<p>You can also build the docker environment, described in env/Dockerfile, yourself, with the following commands: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
-cd elma
-docker build -t myelma .
-docker run -v $PWD:/source -it myelma bash
-make
-examples/bin/basic
-</pre><h2>Manual Installation </h2>
-<p>To install Elma without using Docker, you will need to install the following tools:</p><ul>
-<li><a href="https://gcc.gnu.org/">gcc</a> 4.9 or an equivalent C/C++ compiler that supports at least C++14</li>
-<li>Make (if you want to use the makefile. Alternatively, you can use some other build manager)</li>
-<li><a href="http://www.doxygen.nl/">Doxygen</a></li>
-<li><a href="https://github.com/google/googletest">Google Test</a></li>
-<li>Neils Lohmann's JSON library: <a href="https://github.com/nlohmann/json">https://github.com/nlohmann/json</a></li>
-<li><a href="https://github.com/klavins/cpp-httplib.git">My fork</a> of <a href="https://github.com/yhirose">yhirose</a>'s HTTP library</li>
+</li>
 </ul>
-<h2>Installation on Unix systems (e.g. Raspbian) </h2>
-<p>First install required packages available through apt-get </p><pre class="fragment">sudo apt-get update
-sudo apt-get install -y cmake
-sudo apt-get install -y cppcheck
-sudo apt-get install -y graphviz
-sudo apt-get install -y doxygen
-sudo apt-get install -y cmake
-sudo apt-get install -y libssl-dev
-</pre><p>Next, install Google Test </p><pre class="fragment">cd /usr/src
-sudo git clone https://github.com/google/googletest.git
-cd googletest
-sudo mkdir install
-cd install
-sudo cmake ../
-sudo make
-sudo make install
-</pre><p>Next, install the json library </p><pre class="fragment">sudo mkdir /usr/local/include/json
-cd /usr/local/include/json
-sudo curl -O -J -L https://github.com/nlohmann/json/releases/download/v3.5.0/json.hpp
-sudo mv json.hpp json.h
-</pre><p>Next, install httplib </p><pre class="fragment">cd /tmp
-git clone https://github.com/klavins/cpp-httplib.git
-sudo mkdir /usr/local/include/httplib
-sudo mv /tmp/cpp-httplib/httplib.h /usr/local/include/httplib
-</pre><p>Now you should be ready to install elma: </p><pre class="fragment">cd ~
-mkdir Code
-cd Code
-git clone https://github.com/klavinslab/elma.git
-cd elma
-make
-</pre><p>Note that the Makefile should detect if you are on a pi by using the command </p><pre class="fragment">uname -m
-</pre><p>which on a pi 3 model B+ returns 'armv71'. If your pi is different, you might need to change the ifeq statments in <code>test/Makefile</code> and <code>examples/Makefile</code>.</p>
-<p>If you would like to treat elma as a library, so you can link in other code, you should link to the relevant files in to the unversal system resources (usr) as follows: ```bash ln -s include /usr/local/include/elma ln -s lib/libelma.a /usr/local/lib/libelma.a ``` Then you can do ```c++ #include "elma/elma.h" ``<code> in your code and use the</code>-lelma` flag while linking. See the <a href="https://github.com/klavinslab/elma_project">example elma project</a> for an example.</p>
-<h1>Usage </h1>
-<p>See the examples in the <code>examples</code> directory for how to build new event loops with Elma.</p>
-<h1>License </h1>
-<p>This software is open source and uses the MIT license. Details can be found <a href="https://github.com/klavinslab/elma">here</a>. </p>
+<p><a class="el" href="classBreak.html">Break</a></p><ul>
+<li>driver simulator <h2># Run the project </h2>
+</li>
+</ul>
+<p>git clone <a href="https://github.com/viettran0130/SuperCar-EE590.git">https://github.com/viettran0130/SuperCar-EE590.git</a> cd SuperCar-EE590 docker run -v $PWD:/source -it klavins/elma:latest bash make cd examples </p><h2>bin/driving </h2>
+<h1>Test Case</h1>
+<ul>
+<li>Verify Finite State Machine applied on <a class="el" href="classEngine.html">Engine</a><ul>
+<li>random function will define if engine is on/off</li>
+</ul>
+</li>
+<li>Verify Gear function<ul>
+<li><a class="el" href="classEngine.html">Engine</a> is off&ndash;&gt; velocity = 0</li>
+<li><a class="el" href="classEngine.html">Engine</a> is on, Gear sets "D"&ndash;&gt; <a class="el" href="classCar.html">Car</a> is runing , speed increased <h1>Test Status</h1>
+</li>
+</ul>
+</li>
+<li>Test <a class="el" href="classEngine.html">Engine</a> on/off (PASSED)</li>
+<li>Test Neutral Mode (PASSED)</li>
+<li>Test Park Mode (PASSED)</li>
+<li>Test Drive Mode (PASSED)</li>
+<li>Test Reverse Mode (PASSED)</li>
+<li>The codes below will demonstrate<ul>
+<li><a class="el" href="classEngine.html">Engine</a> off -&gt; velocity = 0</li>
+<li><a class="el" href="classEngine.html">Engine</a> on and Gear set D -&gt; Drive mode -&gt; Speed increasing</li>
+<li><a class="el" href="classEngine.html">Engine</a> on and Gear set P -&gt; Park mode -&gt; velocity = 0 ```c++ void update() { int random = rand() % 10; if (random % 2==0){ std::cout &lt;&lt; "Engine on" &lt;&lt; " \n"; emit(Event("turn on engine")); }else { std::cout &lt;&lt; "Engine off" &lt;&lt;"    "&lt;&lt; "velocity = 0" &lt;&lt; " \n"; emit(Event("turn off engine")); } json v; v["gear_value"] = "D"; emit(Event("set gear",v)); } ``` <h1><a class="el" href="classEngine.html">Engine</a> – Finite State Machine</h1>
+</li>
+</ul>
+</li>
+<li>From state off to on -&gt; turn on engine</li>
+<li>From state on to off -&gt; turn off engine ```c++ class <a class="el" href="classEngine.html">Engine</a> : public StateMachine { public: <pre class="fragment">Engine(std::string name): StateMachine(name), on("on"), off("off")
+ {
+    add_transition("turn on engine", off, on);
+    add_transition("turn off engine", on, off);
+    set_initial(off);
+}
+</pre></li>
+</ul>
+<p>private: <a class="el" href="classEngineState.html">EngineState</a> on; <a class="el" href="classEngineState.html">EngineState</a> off;</p>
+<p>}; ``` </p><h1>Automatic Gear</h1>
+<ul>
+<li><p class="startli">Four gear modes has been successfully implemented: P, N, D , R ```c++ void update() { force=1000 if (can_run==false){ velocity = 0; return ; } if (gear == "N") { std::cout &lt;&lt; "Engine on" &lt;&lt; " \n"; std::cout &lt;&lt; "Neutral Mode" &lt;&lt; " \n"; velocity = 0; }else if (gear == "P"){ std::cout &lt;&lt; "Engine on" &lt;&lt; " \n"; std::cout &lt;&lt; "Park Mode" &lt;&lt; " \n"; velocity = 0; }else if( gear == "D") { std::cout &lt;&lt; "Engine on" &lt;&lt; " \n"; std::cout &lt;&lt; "Drive Mode" &lt;&lt; " \n"; foward = true; velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m; } else if (gear == "R"){ std::cout &lt;&lt; "Engine on" &lt;&lt; " \n"; std::cout &lt;&lt; "Reverse Mode" &lt;&lt; " \n"; foward = false; velocity += -1*(( delta() / 1000 ) * ( - k * velocity + force ) / m);</p>
+<p class="startli">} channel("Velocity").send(velocity); std::cout &lt;&lt; "Time=" &lt;&lt; milli_time() &lt;&lt; "  ,  " &lt;&lt; "velocity="&lt;&lt; velocity &lt;&lt; " \n"; } ``` </p><h1><a class="el" href="classBreak.html">Break</a></h1>
+</li>
+<li><a class="el" href="classCar.html">Car</a> is running, break applies -&gt; velocity gradually decreased.</li>
+<li>Velocity =0 -&gt; <a class="el" href="classCar.html">Car</a> stops <h1>Milestones</h1>
+</li>
+</ul>
+<h5>Week of March 11</h5>
+<ul>
+<li>Implement and integrate Gear function</li>
+<li>Implement and integrate <a class="el" href="classBreak.html">Break</a> function</li>
+<li>Implement and integrate <a class="el" href="classEngine.html">Engine</a> function (apply State machine) <h5>Week of March 18</h5>
+</li>
+</ul>
+<ul>
+<li>Use Doxygen to document <h5>Deadline March 21</h5>
+</li>
+</ul>
+<ul>
+<li>Submit project </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Fri Mar 15 2019 20:38:56 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Thu Mar 21 2019 19:19:48 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
