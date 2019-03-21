@@ -39,9 +39,9 @@ These following functions will be implemented:
 
 ---
 void update() {
-        int random = rand() % 10;
-        if (random % 2==0){
-            std::cout << "Engine on" << " \n";
+    int random = rand() % 10;
+    if (random % 2==0){
+     std::cout << "Engine on" << " \n";
             emit(Event("turn on engine"));
         }else {
             std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
