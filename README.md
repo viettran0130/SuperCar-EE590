@@ -8,10 +8,10 @@ These following functions will be implemented:
     * P = Park Mode
     * D = Drive Mode
     * R = Reverse Mode
- * Break
- * driver simulator
+* Break
+* driver simulator
 # Run the project
----
+---bash 
     git clone https://github.com/viettran0130/SuperCar-EE590.git
     cd SuperCar-EE590
     docker run -v $PWD:/source -it klavins/elma:latest bash
