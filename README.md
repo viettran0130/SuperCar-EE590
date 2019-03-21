@@ -11,14 +11,14 @@ These following functions will be implemented:
 * Break
 * driver simulator
 # Run the project
----bash 
+```bash 
     git clone https://github.com/viettran0130/SuperCar-EE590.git
     cd SuperCar-EE590
     docker run -v $PWD:/source -it klavins/elma:latest bash
     make
     cd examples
     bin/driving 
----
+```
 # Test Case
 * Verify Finite State Machine applied on Engine 
    * random function will define if engine is on/off
