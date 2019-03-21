@@ -41,26 +41,19 @@ These following functions will be implemented:
 void update() {
     int random = rand() % 10;
     if (random % 2==0){
-     std::cout << "Engine on" << " \n";
-            emit(Event("turn on engine"));
-        }else {
-            std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
-            emit(Event("turn off engine"));
+        std::cout << "Engine on" << " \n";
+        emit(Event("turn on engine"));
+    }else {
+        std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
+        emit(Event("turn off engine"));
             
-        }
-
-        json v;
-        // v["gear_value"] = "R";
-        //  emit(Event("set gear",v));
-        // v["gear_value"] = "P";
-        //  emit(Event("set gear",v));
-        // v["gear_value"] = "N";
-        //  emit(Event("set gear",v));
-        v["gear_value"] = "D";
-         emit(Event("set gear",v));   
     }
----
 
+    json v;
+    v["gear_value"] = "D";
+    emit(Event("set gear",v));   
+}
+```
  
  
  # Engine – Finite State Machine
