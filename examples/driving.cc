@@ -2,11 +2,6 @@
 #include <chrono>
 #include "elma.h"
 #include <stdlib.h> 
-// #include "koolplot.h"
-// #include <chplot.h>
-// #include <chplot.h>
-
-//! \file
 
 using namespace std::chrono;
 using std::vector;
@@ -26,7 +21,6 @@ class Car : public Process {
         });
 
        // Engine 
-
         watch("engine on", [this](Event& e) {
             can_run =true; 
         });
@@ -41,15 +35,15 @@ class Car : public Process {
     }
     void update() {
         // if ( channel("Throttle").nonempty() ) {
-            // force = channel("Throttle").latest();
-             force=1000;
+        //     force = channel("Throttle").latest();
+        //    // force=1000;
         // }
-
+        force=10000;
         if (can_run==false){
             velocity = 0;
             return ; 
         }
-       // std::cout << gear << " \n";
+
         if (gear == "N")  {
             std::cout << "Engine on" << " \n";
             std::cout << "Neutral Mode" << " \n";
@@ -71,14 +65,10 @@ class Car : public Process {
 
         }
         channel("Velocity").send(velocity);
-        // std::cout << milli_time() << ","
-        //           << velocity << " \n";
         std::cout << "Time=" <<  milli_time() << "  ,  "
                  << "velocity="<<  velocity << " \n";
         
-        // Plotdata x=milli_time(), y = velocity;
-        // plot(x, y);
-        
+     
     }
     void stop() {}
     
@@ -92,15 +82,7 @@ class Car : public Process {
     bool foward = true; 
     // Engine 
     bool can_run = false; 
-    // add Break function 
-
-
-    // add wheel 
-
-
-
-    // add simulator 
-   
+  
 };  
 
 
@@ -145,7 +127,6 @@ class Driver : public Process {
             emit(Event("turn off engine"));
             
         }
-    //    std::cout << "Engine off" << " \n";
 
         json v;
         // v["gear_value"] = "R";
@@ -167,7 +148,7 @@ class Driver : public Process {
 
 
 
-
+// Apply FSM to Engines to switch on/off state
 class EngineState : public State {
 public:
  
@@ -197,30 +178,77 @@ private:
     EngineState on;
     EngineState off;
     
-   // bool key = true; 
-
 };
 
 
 
 
-int main() {
 
+// Break Process: if break applied , current speed will be decrease.
+// if current speed equals 0, car will stop 
 
+class Break: public Process {
+        public: 
     
+        Break(std::string name) : Process(name) {}
+
+        void init() {
+            watch("break", [this](Event& e) {
+                running = true;
+            });  
+        }
+
+        void start() {
+
+        }
+
+  
+        void update() {
+            if ( channel("Throttle").nonempty() ) {
+                force = channel("Throttle").latest();
+            }
+            current_speed+= ( delta() / 1000 ) * ( - k * current_speed+ force ) / m;
+            if (_break== true ){
+                current_speed-= ( delta() / 1000 ) * ( - k * current_speed+ force ) / m;
+                if (current_speed==0){
+                    running = false;
+
+                }
+            }
+       
+            channel("Velocity").send(current_speed);
+            std::cout << milli_time() << ","
+                    << current_speed<< " \n";
+        }
+
+        void stop() {}
+
+        private:
+        double current_speed;
+        bool _break;
+        bool running;
+        double force;
+       
+        const double k = 0.02;
+        const double m = 1000;
+
+};
+
+
+int main() {
 
     Manager m;
     
-    Car car("Car");
-    // CruiseControl cc("Control");
+     Car car("Car");
+     CruiseControl cc("Control");
+     Break br("Break");
      Driver driver("Steve");
      Channel throttle("Throttle");
      Channel velocity("Velocity");
-
      Engine engine("Engine");
 
     m.schedule(car, 100_ms)
-    // .schedule(cc, 100_ms)
+   
      .schedule(driver, 5_s)
      .schedule(engine, 5_s)
      .add_channel(throttle)
@@ -228,11 +256,8 @@ int main() {
     
     .init()
     .run(40_s)
-    //.start()
-    //.emit(Event("set gear", { "gear_value" , "D"}))
+
     ;
 
-
-   // m.emit(Event("on button pressed"));
 
 }
