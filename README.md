@@ -25,14 +25,16 @@ These following functions will be implemented:
    * Engine is off--> velocity = 0
    * Engine is on, Gear sets "D"--> Car is runing , speed increased 
 ##### Test Status 
+* Test Engine on/off (PASSED)
 * Test Neutral Mode (PASSED)
 * Test Park Mode (PASSED)
 * Test Drive Mode (PASSED)
 * Test Reverse Mode (PASSED)
-Test Example: 
-  * Engine off -> velocity = 0 
-  * Engine on and Gear set D -> Drive mode -> Speed increasing 
-  * Engine on and Gear set P -> Park mode -> velocity = 0 
+* The codes below will demonstrate  
+   * Engine off -> velocity = 0 
+   * Engine on and Gear set D -> Drive mode -> Speed increasing 
+   * Engine on and Gear set P -> Park mode -> velocity = 0
+
 
 ```c++
 void update() {
@@ -57,6 +59,7 @@ void update() {
          emit(Event("set gear",v));   
     }
  ```
+ 
  
  # Engine – Finite State Machine
  * From state off to on -> turn on engine 
