@@ -108,7 +108,8 @@ void update() {
 * Car is running, break applies -> velocity gradually decreased.  
 * Velocity =0 -> Car stops
 # docs files 
-* Look at this link for reference
+* Look at this link for reference: 
+https://viettran0130.github.io/SuperCar-EE590/.
 # Milestones
 ##### Week of March 11
 * Implement and integrate Gear function 
