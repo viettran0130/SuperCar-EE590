@@ -37,7 +37,7 @@ These following functions will be implemented:
    * Engine on and Gear set D -> Drive mode -> Speed increasing 
    * Engine on and Gear set P -> Park mode -> velocity = 0
 
----
+```c++ 
 void update() {
     int random = rand() % 10;
     if (random % 2==0){
