@@ -50,15 +50,13 @@ void update() {
     emit(Event("set gear",v));   
 }
 ```
- 
- 
- # Engine – Finite State Machine
- * From state off to on -> turn on engine 
- * From state on to off -> turn off engine 
+# Engine – Finite State Machine
+* From state off to on -> turn on engine 
+* From state on to off -> turn off engine 
 ```c++ 
 class Engine : public StateMachine {
 public:
- 
+
     Engine(std::string name): StateMachine(name), on("on"), off("off")
      {
         add_transition("turn on engine", off, on);
@@ -71,12 +69,11 @@ private:
     EngineState off;
     
 };
-
 ```
 # Automatic Gear 
 * Four gear modes has been successfully implemented: P, N, D , R 
 ```c++
- void update() {
+void update() {
         force=1000
         if (can_run==false){
             velocity = 0;
@@ -107,21 +104,16 @@ private:
                  << "velocity="<<  velocity << " \n";   
  }
 ```
- 
 # Break 
 * Car is running, break applies -> velocity gradually decreased.  
 * Velocity =0 -> Car stops 
-
 # Milestones
-
 ##### Week of March 11
 * Implement and integrate Gear function 
 * Implement and integrate Break function
 * Implement and integrate Engine function (apply State machine)
-
 ##### Week of March 18 
 * Use Doxygen to document 
-
 ##### Deadline March 21
 * Submit project 
 
