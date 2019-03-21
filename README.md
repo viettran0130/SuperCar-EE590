@@ -9,7 +9,6 @@ These following functions will be implemented:
     * D = Drive Mode
     * R = Reverse Mode
 * Break
-* driver simulator
 # Run the project
 ```bash 
     git clone https://github.com/viettran0130/SuperCar-EE590.git
