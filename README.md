@@ -114,8 +114,9 @@ private:
         channel("Velocity").send(velocity);
         std::cout << "Time=" <<  milli_time() << "  ,  "
                  << "velocity="<<  velocity << " \n";   
-    }
- ```
+ }
+```
+ 
 # Break 
 * Car is running, break applies -> velocity gradually decreased.  
 * Velocity =0 -> Car stops 
