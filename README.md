@@ -14,8 +14,37 @@ These following functions will be implemented:
     cd SuperCar-EE590
     docker run -v $PWD:/source -it klavins/elma:latest bash
     make
-    examples# bin/driving 
+    cd examples
+    bin/driving 
     
+# Test Case
+* Verify Finite State Machine applied on Engine 
+      *  Radom function will define if engine is on/off
+* Verify Gear function
+
+```c++
+void update() {
+        int random = rand() % 10;
+        if (random % 2==0){
+            std::cout << "Engine on" << " \n";
+            emit(Event("turn on engine"));
+        }else {
+            std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
+            emit(Event("turn off engine"));
+            
+        }
+
+        json v;
+        // v["gear_value"] = "R";
+        //  emit(Event("set gear",v));
+        // v["gear_value"] = "P";
+        //  emit(Event("set gear",v));
+        // v["gear_value"] = "N";
+        //  emit(Event("set gear",v));
+        v["gear_value"] = "D";
+         emit(Event("set gear",v));   
+    }
+ ```
 # Milestones
 
 ##### Week of March 11
