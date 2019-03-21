@@ -11,7 +11,7 @@ These following functions will be implemented:
  * Break
  * driver simulator
 # Run the project
-```sh
+```bash
     git clone https://github.com/viettran0130/SuperCar-EE590.git
     cd SuperCar-EE590
     docker run -v $PWD:/source -it klavins/elma:latest bash
@@ -36,8 +36,7 @@ These following functions will be implemented:
    * Engine on and Gear set D -> Drive mode -> Speed increasing 
    * Engine on and Gear set P -> Park mode -> velocity = 0
 
-
-```c++
+```bash
 void update() {
         int random = rand() % 10;
         if (random % 2==0){
