@@ -130,8 +130,6 @@ private:
 * Implement and integrate Engine function (apply State machine)
 
 ##### Week of March 18 
-* Implement and integrate Steering wheel 
-* Implement and integrate driver simulator 
 * Use Doxygen to document 
 
 ##### Deadline March 21
