@@ -48,6 +48,8 @@ void update() {
     json v;
     v["gear_value"] = "D";
     emit(Event("set gear",v));   
+   // v["gear_value"] = "P";
+   // emit(Event("set gear",v)); 
 }
 ```
 # Engine – Finite State Machine
