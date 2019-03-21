@@ -38,7 +38,6 @@ These following functions will be implemented:
    * Engine on and Gear set P -> Park mode -> velocity = 0
 
 ---
-
 void update() {
         int random = rand() % 10;
         if (random % 2==0){
