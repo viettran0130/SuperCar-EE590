@@ -24,6 +24,15 @@ These following functions will be implemented:
 * Verify Gear function
    * Engine is off--> velocity = 0
    * Engine is on, Gear sets "D"--> Car is runing , speed increased 
+##### Test Status 
+* Test Neutral Mode (PASSED)
+* Test Park Mode (PASSED)
+* Test Drive Mode (PASSED)
+* Test Reverse Mode (PASSED)
+Test Example: 
+  * Engine off -> velocity = 0 
+  * Engine on and Gear set D -> Drive mode -> Speed increasing 
+  * Engine on and Gear set P -> Park mode -> velocity = 0 
 
 ```c++
 void update() {
@@ -69,8 +78,8 @@ private:
     
 };
 
-``
-# Automatic Gear
+```
+# Automatic Gear 
 * Four gear modes has been successfully implemented: P, N, D , R 
 ```c++
  void update() {
@@ -104,6 +113,9 @@ private:
                  << "velocity="<<  velocity << " \n";   
     }
  ```
+# Break 
+* Car is running, break applies -> velocity gradually decreased.  
+* Velocity =0 -> Car stops 
 
 # Milestones
 
