@@ -19,7 +19,6 @@ These following functions will be implemented:
     cd examples
     bin/driving 
 ---
-
 # Test Case
 * Verify Finite State Machine applied on Engine 
    * random function will define if engine is on/off
@@ -36,7 +35,6 @@ These following functions will be implemented:
    * Engine off -> velocity = 0 
    * Engine on and Gear set D -> Drive mode -> Speed increasing 
    * Engine on and Gear set P -> Park mode -> velocity = 0
-
 ```c++ 
 void update() {
     int random = rand() % 10;
@@ -45,10 +43,8 @@ void update() {
         emit(Event("turn on engine"));
     }else {
         std::cout << "Engine off" <<"    "<< "velocity = 0" << " \n";
-        emit(Event("turn off engine"));
-            
+        emit(Event("turn off engine"));   
     }
-
     json v;
     v["gear_value"] = "D";
     emit(Event("set gear",v));   
