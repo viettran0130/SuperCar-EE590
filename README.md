@@ -10,14 +10,15 @@ These following functions will be implemented:
     * R = Reverse Mode
  * Break
  * driver simulator
-# Run the project 
+# Run the project
+```sh
     git clone https://github.com/viettran0130/SuperCar-EE590.git
     cd SuperCar-EE590
     docker run -v $PWD:/source -it klavins/elma:latest bash
     make
     cd examples
     bin/driving 
-    
+``` 
 # Test Case
 * Verify Finite State Machine applied on Engine 
    * random function will define if engine is on/off
@@ -58,7 +59,7 @@ void update() {
         v["gear_value"] = "D";
          emit(Event("set gear",v));   
     }
- ```
+```
  
  
  # Engine – Finite State Machine
