@@ -25,7 +25,7 @@ These following functions will be implemented:
 * Verify Gear function
    * Engine is off--> velocity = 0
    * Engine is on, Gear sets "D"--> Car is runing , speed increased 
-##### Test Status 
+# Test Status 
 * Test Engine on/off (PASSED)
 * Test Neutral Mode (PASSED)
 * Test Park Mode (PASSED)
