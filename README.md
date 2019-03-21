@@ -19,8 +19,9 @@ These following functions will be implemented:
     
 # Test Case
 * Verify Finite State Machine applied on Engine 
-      *  Radom function will define if engine is on/off
+   * random function will define if engine is on/off
 * Verify Gear function
+   * 
 
 ```c++
 void update() {
