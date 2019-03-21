@@ -69,7 +69,42 @@ private:
     
 };
 
-```
+``
+# Automatic Gear
+* Four gear modes has been successfully implemented: P, N, D , R 
+```c++
+ void update() {
+        force=1000
+        if (can_run==false){
+            velocity = 0;
+            return ; 
+        }
+        if (gear == "N")  {
+            std::cout << "Engine on" << " \n";
+            std::cout << "Neutral Mode" << " \n";
+            velocity = 0;
+        }else if (gear == "P"){
+            std::cout << "Engine on" << " \n";
+            std::cout << "Park Mode" << " \n";
+            velocity = 0;
+        }else if( gear == "D") {
+            std::cout << "Engine on" << " \n";
+            std::cout << "Drive Mode" << " \n";
+            foward = true;
+            velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;   
+        } else if (gear == "R"){
+            std::cout << "Engine on" << " \n";
+            std::cout << "Reverse Mode" << " \n";
+            foward = false; 
+            velocity += -1*(( delta() / 1000 ) * ( - k * velocity + force ) / m);
+
+        }
+        channel("Velocity").send(velocity);
+        std::cout << "Time=" <<  milli_time() << "  ,  "
+                 << "velocity="<<  velocity << " \n";   
+    }
+ ```
+
 # Milestones
 
 ##### Week of March 11
